@@ -9,6 +9,7 @@
     <script src="{{ asset('js/app.js') }}"></script>
 </head>
 <body>
+    @include('partial.header')
     <div class="container">
         @yield('content')
     </div>
