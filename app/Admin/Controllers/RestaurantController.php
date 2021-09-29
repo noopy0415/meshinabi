@@ -92,7 +92,7 @@ class RestaurantController extends AdminController
         $form->text('note', __('Note'));
         $form->text('pr_short', __('Pr short'));
         $form->text('pr_long', __('Pr long'));
-        $form->text('img_path', __('Img path'));
+        $form->image('img_path', __('Img path'))->move('restaurant_image')->uniqueName();
         $form->text('latitude', __('Latitude'));
         $form->text('longitude', __('Longitude'));
 
