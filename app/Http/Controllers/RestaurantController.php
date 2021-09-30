@@ -8,9 +8,14 @@ use Illuminate\Http\Request;
 class RestaurantController extends Controller
 {
     //
-    public function index()
+    public function index(Request $request)
     {
-        $restaurants = Restaurant::simplePaginate(10);
+        $name = $request->name;
+        $category = $request->category;
+
+        $params = $request->query();
+        $restaurants = Restaurant::search($params)->paginate(10);
+
         return view('restaurants.index', compact('restaurants'));
     }
 
