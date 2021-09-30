@@ -16,6 +16,7 @@ class RestaurantController extends Controller
         $params = $request->query();
         $restaurants = Restaurant::search($params)->paginate(10);
 
+        $restaurants->appends(compact('name', 'category'));
         return view('restaurants.index', compact('restaurants'));
     }
 
