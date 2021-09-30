@@ -12,10 +12,10 @@ class Restaurant extends Model
 
     public function scopeSearch(Builder $query, $params)
     {
-        if ($params['name']) {
+        if (!empty($params['name'])) {
             $query->where('name', 'like', '%' . $params['name'] . '%');
         }
-        if ($params['category']) {
+        if (!empty($params['category'])) {
             $query->where('category', 'like', '%' . $params['category'] . '%');
         }
         return $query;
