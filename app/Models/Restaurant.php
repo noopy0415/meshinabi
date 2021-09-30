@@ -28,4 +28,9 @@ class Restaurant extends Model
     {
         return $this->belongsTo(\App\Models\Category::class);
     }
+
+    public function menus()
+    {
+        return $this->hasMany(\App\Models\Menu::class);
+    }
 }
